@@ -51,7 +51,7 @@ app.layout = html.Div([
       html.Div(id='output-container', className='chart-grid', style={'display': 'flex'}),
       ])
   ])
-])
+
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
 @app.callback(
@@ -93,7 +93,7 @@ def update_output_container(selected_statistics, input_year):
         R_chart2  = dcc.Graph(figure=px.line(average_sales, 
                 x='Vehicle_Type',
                 y='Automobile_Sales',
-                title="Average Automobile Sales by Vehicle Type over Recession Period")).
+                title="Average Automobile Sales by Vehicle Type over Recession Period"))
         
 # Plot 3 Pie chart for total expenditure share by vehicle type during recessions
         # use groupby to create relevant data for plotting
@@ -117,10 +117,11 @@ def update_output_container(selected_statistics, input_year):
                   labels={'unemployment_rate': 'Unemployment Rate', 'Automobile_Sales': 'Average Automobile Sales'},
                   title="Effect of Unemployment Rate on Sales of various Vehicle Types")
 
-        return [
-            html.Div(className='chart-item', children=[html.Div(children=R_chart1),html.Div(children=R_chart2)],style={'display': 'flex'}),
-            html.Div(className='chart-item', children=[html.Div(children=R_chart3),html.Div(children=R_chart4)],style={'display': 'flex'})
-            ]
+    return [
+        html.Div(className='chart-item', children=[html.Div(children=R_chart1),html.Div(children=R_chart2)],style={'display': 'flex'}),
+        html.Div(className='chart-item', children=[html.Div(children=R_chart3),html.Div(children=R_chart4)],style={'display': 'flex'})
+    ]
+        
 
 # TASK 2.6: Create and display graphs for Yearly Report Statistics
  # Yearly Statistic Report Plots                             
@@ -158,18 +159,17 @@ def update_output_container(selected_statistics, input_year):
         )
 
 #TASK 2.6: Returning the graphs for displaying Yearly data
-        return [
-                html.Div(className='chart-item', children=[html.Div(children=Y_chart1,html.Div(children=Y_chart2)],style={'display': 'flex'}),
-                html.Div(className='chart-item', children=[html.Div(children=Y_chart3),html.Div(children=Y_chart4)],style={'display': 'flex'})
-                ]
+    return [
+        html.Div(className='chart-item', children=[html.Div(children=Y_chart1,html.Div(children=Y_chart2)],style={'display': 'flex'}),
+        html.Div(className='chart-item', children=[html.Div(children=Y_chart3),html.Div(children=Y_chart4)],style={'display': 'flex'})
+        ]
         
     else:
         return None
 
 # Run the Dash app
-if __name__ == '__main__':
-    app.run_server(debug=True)
-
+    if __name__ == '__main__':
+        app.run_server(debug=True)
 
 
 
