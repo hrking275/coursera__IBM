@@ -115,7 +115,7 @@ def update_output_container(selected_statistics, input_year):
                   y='Automobile_Sales',
                   color='#503D36',
                   labels={'unemployment_rate': 'Unemployment Rate', 'Automobile_Sales': 'Average Automobile Sales'},
-                  title="Effect of Unemployment Rate on Sales of various Vehicle Types")
+                  title="Effect of Unemployment Rate on Sales of various Vehicle Types"))
 
     return [
         html.Div(className='chart-item', children=[html.Div(children=R_chart1),html.Div(children=R_chart2)],style={'display': 'flex'}),
@@ -137,7 +137,7 @@ def update_output_container(selected_statistics, input_year):
                 title="Average Automobile Sales fluctuation over Recession Period"))
             
 # Plot 2 Total Monthly Automobile sales using line chart.
-        Y_chart1 = dcc.Graph(figure=px.line(yearly_data, 
+        Y_chart2 = dcc.Graph(figure=px.line(yearly_data, 
                 x='Month',
                 y='Automobile_Sales',
                 title="Average Monthly Automobile Sales fluctuation over Recession Period"))
@@ -147,7 +147,7 @@ def update_output_container(selected_statistics, input_year):
         Y_chart3 = dcc.Graph( figure=px.bar(avr_vdata,
                 x='Vehicle_Type',
                 y='Automobile_Sales',
-                title='Average Vehicles Sold by Vehicle Type in the year {}'.format(input_year)))
+                title='Average Vehicles Sold by Vehicle Type in the year'.format(input_year)))
 
             # Total Advertisement Expenditure for each vehicle using pie chart
         exp_data=yearly_data.groupby('Vehicle_Type')['Advertising_Expenditure'].sum().reset_index()
@@ -160,7 +160,7 @@ def update_output_container(selected_statistics, input_year):
 
 #TASK 2.6: Returning the graphs for displaying Yearly data
     return [
-        html.Div(className='chart-item', children=[html.Div(children=Y_chart1,html.Div(children=Y_chart2)],style={'display': 'flex'}),
+        html.Div(className='chart-item', children=[html.Div(children=Y_chart1),html.Div(children=Y_chart2)],style={'display': 'flex'}),
         html.Div(className='chart-item', children=[html.Div(children=Y_chart3),html.Div(children=Y_chart4)],style={'display': 'flex'})
         ]
         
@@ -169,7 +169,6 @@ def update_output_container(selected_statistics, input_year):
 
 # Run the Dash app
     if __name__ == '__main__':
-        app.run_server(debug=True)
 
 
 
