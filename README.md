@@ -117,14 +117,14 @@ def update_output_container(selected_statistics, input_year):
                   labels={'unemployment_rate': 'Unemployment Rate', 'Automobile_Sales': 'Average Automobile Sales'},
                   title="Effect of Unemployment Rate on Sales of various Vehicle Types"))
 
-    return [
+        return [
         html.Div(className='chart-item', children=[html.Div(children=R_chart1),html.Div(children=R_chart2)],style={'display': 'flex'}),
         html.Div(className='chart-item', children=[html.Div(children=R_chart3),html.Div(children=R_chart4)],style={'display': 'flex'})
     ]
         
 
 # TASK 2.6: Create and display graphs for Yearly Report Statistics
- # Yearly Statistic Report Plots                             
+# Yearly Statistic Report Plots                             
     elif (input_year and selected_statistics=='Yearly Statistics') :
         yearly_data = data[data['Year'] == input_year]
                               
@@ -159,7 +159,7 @@ def update_output_container(selected_statistics, input_year):
         )
 
 #TASK 2.6: Returning the graphs for displaying Yearly data
-    return [
+        return [
         html.Div(className='chart-item', children=[html.Div(children=Y_chart1),html.Div(children=Y_chart2)],style={'display': 'flex'}),
         html.Div(className='chart-item', children=[html.Div(children=Y_chart3),html.Div(children=Y_chart4)],style={'display': 'flex'})
         ]
@@ -169,6 +169,7 @@ def update_output_container(selected_statistics, input_year):
 
 # Run the Dash app
     if __name__ == '__main__':
+        app.run_server(debug=True)
 
 
 
