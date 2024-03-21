@@ -3,7 +3,7 @@
 
 # In[ ]:
 
-
+!pip install pandas dash 
 import dash
 import more_itertools
 from dash import dcc
