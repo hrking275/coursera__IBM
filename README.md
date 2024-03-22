@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[ ]:
-
+#RUN !pip install pandas dash FIRST THEN START THE CODE BELOW
 #!pip install pandas dash 
 import dash
 #import more_itertools
