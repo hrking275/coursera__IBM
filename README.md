@@ -3,9 +3,9 @@
 
 # In[ ]:
 
-!pip install pandas dash 
+#!pip install pandas dash 
 import dash
-import more_itertools
+#import more_itertools
 from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
@@ -153,7 +153,7 @@ def update_output_container(selected_statistics, input_year):
 
             # Total Advertisement Expenditure for each vehicle using pie chart
         exp_data=yearly_data.groupby('Vehicle_Type')['Advertising_Expenditure'].sum().reset_index()
-        Y_chart4 = dcc.Graph(figure=px.pie(exp_rec,
+        Y_chart4 = dcc.Graph(figure=px.pie(exp_data,
                     values='Advertising_Expenditure',
                  names='Vehicle_Type',
                  title="Total Ad Expenditure by Vehicle Type over Recession Period"
@@ -170,8 +170,8 @@ def update_output_container(selected_statistics, input_year):
         return None
 
 # Run the Dash app
-    if __name__ == '__main__':
-        app.run_server(debug=True)
+if __name__ == '__main__':
+    app.run_server(debug=True)
 
 
 
