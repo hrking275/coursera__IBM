@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
+# 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/historical_automobile_sales.csv'
 # In[ ]:
 #RUN !pip install pandas dash FIRST THEN START THE CODE BELOW
 #!pip install pandas dash 
@@ -14,7 +14,7 @@ import plotly.graph_objs as go
 import plotly.express as px
 
 # Load the data using pandas
-data = pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/historical_automobile_sales.csv')
+data = pd.read_csv('C:\Users\tgol041\OneDrive - Target Corporation\Data Sciences\Coursera\historical_automobile_sales.csv')
 
 # Initialize the Dash app
 app = dash.Dash(__name__)
