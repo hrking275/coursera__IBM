@@ -14,7 +14,7 @@ import plotly.graph_objs as go
 import plotly.express as px
 
 # Load the data using pandas
-data = pd.read_csv('C:\Users\tgol041\OneDrive - Target Corporation\Data Sciences\Coursera\historical_automobile_sales.csv')
+data = pd.read_csv('C:\Users\VegasQuads\Downloads')
 
 # Initialize the Dash app
 app = dash.Dash(__name__)
